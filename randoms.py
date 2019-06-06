@@ -21,9 +21,11 @@ while a<10:
         c=random.randint(0,1)
         d=random.randint(0,1)
         a=a+1
+	if b+c+d==3:
+		continue
+	print("17:"+str(b)+"  27:"+str(c)+"  2:"+str(d))
         GPIO.output(17,b)
         GPIO.output(27,c)
         GPIO.output(2,d)
         time.sleep(2)
-        print("17:"+str(b)+"  27:"+str(c)+"  2:"+str(d))
 GPIO.cleanup()
