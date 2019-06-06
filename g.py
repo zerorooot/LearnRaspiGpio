@@ -5,10 +5,9 @@ import time
 
 GPIO.setmode(GPIO.BCM)
 GPIO.setwarnings(False)
-GPIO.setup(2, GPIO.OUT)
-GPIO.setup(4, GPIO.OUT)
-GPIO.setup(17, GPIO.OUT)
-GPIO.setup(27, GPIO.OUT)
+
+chan_list = [2,4,17,27]
+GPIO.setup(chan_list, GPIO.OUT)
 
 GPIO.output(17,0)
 GPIO.output(27,0)
