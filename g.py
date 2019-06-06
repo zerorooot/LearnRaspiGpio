@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+# 指定针脚输出，用来测定led灯的输出
 import RPi.GPIO as GPIO
 import time
 
