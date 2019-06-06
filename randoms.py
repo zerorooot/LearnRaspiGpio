@@ -8,6 +8,7 @@ GPIO.setup(2, GPIO.OUT)
 GPIO.setup(4, GPIO.OUT)
 GPIO.setup(17, GPIO.OUT)
 GPIO.setup(27, GPIO.OUT)
+#4号脚应该是vcc（我猜的
 GPIO.output(4,1)
 
 a=0
