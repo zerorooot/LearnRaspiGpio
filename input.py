@@ -11,12 +11,17 @@ GPIO.setwarnings(False)
 #设置2号脚为0v
 GPIO.setup(2,GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
 
-a=0
-while a<10:
- a=a+1
- if GPIO.input(channel):
+'''
+查看2脚状态
+ if GPIO.input(2):
   print('Input was HIGH')
  else:
   print('Input was LOW')
+'''
+#低电平触发可用GPIO.FALLING两者都触发可用GPIO.BOTH
+GPIO.add_event_detect(2, GPIO.RISING)
+while True:
+ if GPIO.event_detected(2):
+     print('Button pressed')
 
 GPIO.cleanup()
