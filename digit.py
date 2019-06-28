@@ -12,6 +12,8 @@ def showNumber (nummber) :
     f = 22
     g = 10
     dp = 9
+#    dig2=21
+#    dig1=20
     trans = {'0': [a, f, e, d, c, b], '1': [b, c], '2': [a, b, g, e, d], '3': [a, b, g, c, d], '4': [f, g, b, c],
              '5': [a, f, g, c, d], '6': [a, f, g, e, c, d], '7': [a, b, c], '8': [a, f, b, g, e, c, d],
              '9': [a, f, b, g, c, d]}
@@ -26,7 +28,7 @@ def showNumber (nummber) :
     nummbers=trans[nummber]
     for i in range(len(nummbers)):
         GPIO.output(nummbers[i], 0)
-	print(nummbers[i])
+#	print(nummbers[i])
     return
 
 
@@ -42,17 +44,32 @@ GPIO.setup(chan_list, GPIO.OUT)
 1是关
 GPIO.output(a,0)
 GPIO.output(b,0)
-GPIO.output(c,0)
-GPIO.output(d,0)
-GPIO.output(e,0)
-GPIO.output(f,0)
-GPIO.output(g,1)
-GPIO.output(dp,0)
 
 '''
+def printNumber (number1,number2):
+
+ dig1=21
+ dig2=20
+ sleeptime=0.01
+ GPIO.setup(dig1, GPIO.OUT)
+ GPIO.setup(dig2, GPIO.OUT)
+
+ i=0
+ while i<100:
+	GPIO.output(dig1,1)
+	GPIO.output(dig2,0)
+	showNumber(number1)
+	time.sleep(sleeptime)
+	GPIO.output(dig1,0)
+	GPIO.output(dig2,1)
+	showNumber(number2)
+	time.sleep(sleeptime)
+	GPIO.output(dig2,0)
+	i=i+1
 
 
-showNumber('6')
 
-time.sleep(2)
+
+printNumber('1','2')
+
 GPIO.cleanup()
