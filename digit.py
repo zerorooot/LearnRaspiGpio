@@ -67,9 +67,14 @@ def printNumber (number1,number2):
 	GPIO.output(dig2,0)
 	i=i+1
 
+#读取并显示当前秒
 
+def printNowSecond():
+    curTime = time.localtime(time.time())
+    curSecond = time.strftime("%S", curTime)
+    splitTime = list(curSecond)
+    printNumber(splitTime[0],splitTime[1])
 
-
-printNumber('1','2')
+printNowSecond()
 
 GPIO.cleanup()
