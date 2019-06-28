@@ -55,7 +55,7 @@ def printNumber (number1,number2):
  GPIO.setup(dig2, GPIO.OUT)
 
  i=0
- while i<100:
+ while i<25:
 	GPIO.output(dig1,1)
 	GPIO.output(dig2,0)
 	showNumber(number1)
