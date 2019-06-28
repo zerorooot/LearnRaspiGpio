@@ -75,6 +75,8 @@ def printNowSecond():
     splitTime = list(curSecond)
     printNumber(splitTime[0],splitTime[1])
 
-printNowSecond()
-
+i=0
+while i<20 :
+	printNowSecond()
+	i=i+1
 GPIO.cleanup()
