@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #心跳传感器控制灯亮灭
-#pin2为心跳传感器的sig，用导线将心跳传感器的h正负极与led灯的正负极连接，pin21接led灯的另一个脚
+#pin2为心跳传感器的sig，用导线将心跳传感器的正负极与led灯的正负极连接，pin21接led灯的另一个脚
 import RPi.GPIO as GPIO
 import random
 import time
