@@ -27,3 +27,5 @@
 [heart.py --> 心跳传感器控制/改变rgb灯的颜色](/heart.py)
 
 [tm1637  --> tm1637数码管demo](/tm1637)
+
+[sound.py  --> 声音模块控制LED灯](/sound.py)
